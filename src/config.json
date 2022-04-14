@@ -1,0 +1,6 @@
+{
+    "work_duration" : 55,
+    "break_duration" : 5,
+    "snooze_duration" : 2,
+    "time_unit" : "second"
+}
