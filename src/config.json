@@ -2,5 +2,5 @@
     "work_duration" : 10,
     "break_duration" : 5,
     "snooze_duration" : 2,
-    "time_unit" : "second"
+    "time_unit" : "minute"
 }

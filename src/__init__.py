@@ -2,8 +2,8 @@ import json
 import time
 from datetime import datetime
 from BreakManager import BreakManager
-from src import timestamp
-from src import time_unit_convertor
+from common import timestamp
+from common import time_unit_convertor
 
 def main():
     # if os.name == "posix" or os.name == "darwin":
