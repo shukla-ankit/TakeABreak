@@ -8,14 +8,21 @@ Simple python script to remind users take short 5 minute break every hour from w
 
 Step Final : Open a terminal and fire the script
 
-Linux
+On Linux,
 
 
-    
-    python3 src/app.py
+    cd src
+    python3 app.py
 
 
-Windows
+On Windows,
 
+    cd src
     py src/app.py
 
+    
+## How to create an executable
+
+    pip install pyinstaller
+    
+    pyinstaller --onefile __init__.py
