@@ -4,13 +4,17 @@ from datetime import datetime
 from tkinter import *
 from tkinter import ttk
 from typing import List
+import pyautogui
+
 
 class GUIManager:
     def __init__(self) -> None:
         self.root = None
         self.is_break_time = False
         self.is_reminder_snoozed = False
-        
+        self.monitor_width, self.monitor_height = pyautogui.size()
+        self.window_width, self.window_height = 400, 300
+
     def snooze(self):
         self.is_reminder_snoozed = True
         self.root.destroy()
@@ -26,24 +30,26 @@ class GUIManager:
     
     def start_break_reminder(self):
         self.root = Tk()
+        self.root.geometry(str(self.window_width)+"x"+str(self.window_height)+"+"+str((self.monitor_width-self.window_width)//2)+"+"+str((self.monitor_height-self.window_height)//2))
         frm = ttk.Frame(self.root, padding=10)
-        frm.grid()
-        ttk.Label(frm, text="Take a break!\
+        ttk.Label(frm, text="Take a break!\n\
             \n - walk around\
             \n - drink water\
             \n - stretch\
             \n - relax your eyers\
-            \n\nCome back in 5 minutes..\n").grid(column=0, row=0)
+            \n\nCome back in 5 minutes..\n", font=('American Typewriter bold', 12)).grid(column=0, row=0, columnspan=2)
         ttk.Button(frm, text="Start", command=self.start_break).grid(column=0, row=1)
         ttk.Button(frm, text="Snooze", command=self.snooze).grid(column=1, row=1)
+        frm.place(relx=0.5, rely=0.5, anchor=CENTER)
         self.root.mainloop()
 
     def end_break_reminder(self):
         self.root = Tk()
+        self.root.geometry(str(self.window_width)+"x"+str(self.window_height)+"+"+str((self.monitor_width-self.window_width)//2)+"+"+str((self.monitor_height-self.window_height)//2))
         frm = ttk.Frame(self.root, padding=10)
-        frm.grid()
-        ttk.Label(frm, text="Time to get back!\n").grid(column=0, row=0)
-        ttk.Button(frm, text="Hide", command=self.end_break).grid(column=0, row=1)
+        ttk.Label(frm, text="Time to get back!\n", font=('American Typewriter bold', 12)).grid(column=0, row=0, columnspan=2)
+        ttk.Button(frm, text="Hide", command=self.end_break).grid(column=0, row=1, columnspan=2)
+        frm.place(relx=0.5, rely=0.5, anchor=CENTER)
         self.root.mainloop()
 
 
