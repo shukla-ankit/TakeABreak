@@ -12,17 +12,17 @@ On Linux,
 
 
     cd src
-    python3 app.py
+    python3 take_a_break.py
 
 
 On Windows,
 
     cd src
-    py src/app.py
+    py src/take_a_break.py
 
     
 ## How to create an executable
 
     pip install pyinstaller
-    
-    pyinstaller --onefile __init__.py
+    pyinstaller --onefile take_a_break.py
+
